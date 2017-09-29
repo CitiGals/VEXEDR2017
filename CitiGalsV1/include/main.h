@@ -26,6 +26,9 @@
 #define MAIN_H_
 
 #include <API.h>
+#include "claw.h"
+#include "chassis.h"
+#include "math.h"
 
 // Allow usage of this file in C++ programs
 #ifdef __cplusplus

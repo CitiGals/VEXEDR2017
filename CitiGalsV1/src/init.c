@@ -22,6 +22,7 @@
  */
 void initializeIO() {
 }
+//pre autonomous to position sensors before autonomous begins
 
 /*
  * Runs user initialization code. This function will be started in its own task with the default

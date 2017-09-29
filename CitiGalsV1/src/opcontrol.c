@@ -30,7 +30,37 @@
  * This task should never exit; it should end with some kind of infinite loop, even if empty.
  */
 void operatorControl() {
+	//fullSpeed = 127
+	// fullReverse = -127
+	int joystickR;
+	float motorL;
+	float motorR;
+	int claw;
+	int arm;
+	int power;
+	int turn;
+
 	while (1) {
-		delay(20);
+			 power = joystickGetAnalog(1, 2); // vertical axis on right joystick
+			 turn  = joystickGetAnalog(1, 1); // horizontal axis on right joystick
+			 arm = joystickGetAnalog(2, 1); //horizontal axis on left joystick
+
+			 joystickR = joystickGetAnalog (1, 1);
+			 motorR = pow(joystickR, 3)+(0.3*joystickR);
+			 motorL = pow(joystickR, 3)+(0.3*joystickR);
+			 motorSet (1, motorL); // port, speed
+			 motorSet(2, motorR);
+
+
+
+			 //motorSet(3, leftMotor); // set left wheels
+			 //motorSet(4, rightMotor); // set right wheels
+			 motorSet(7, claw);
+			 motorSet(8, arm);
+
+
+
+
+			 delay(20);
 	}
 }
