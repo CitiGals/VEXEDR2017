@@ -41,16 +41,17 @@ void operatorControl() {
 	int turn;
 
 	while (1) {
+			//getJoystickSettings(joystick); //refreshes current joystick values
 			 //power = joystickGetAnalog(1, 2); // vertical axis on right joystick
 			 //turn  = joystickGetAnalog(1, 1); // horizontal axis on right joystick
+
 			 arm = joystickGetAnalog(2, 1); //horizontal axis on left joystick
 
-			 joystickR = joystickGetAnalog (1, 1);
+			 joystickR = joystickGetAnalog (1, 1); //set vertical axis on right joystick
 			 motorR = pow(joystickR, 3)+(0.3*joystickR);
 			 motorL = pow(joystickR, 3)+(0.3*joystickR);
 			 motorSet (1, motorL); // port, speed
-			 motorSet(10, motorR);
-
+			 motorSet(3, motorR);
 
 
 			 //motorSet(3, leftMotor); // set left wheels

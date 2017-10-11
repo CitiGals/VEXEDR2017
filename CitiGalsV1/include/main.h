@@ -29,6 +29,8 @@
 //#include "claw.h"
 #include "chassis.h"
 #include "math.h"
+#include "JoystickDriver.c"
+
 
 // Allow usage of this file in C++ programs
 #ifdef __cplusplus
