@@ -28,8 +28,10 @@
 #include <API.h>
 //#include "claw.h"
 #include "chassis.h"
+#include "claw.h"
+#include "lift.h"
 #include "math.h"
-#include "JoystickDriver.c"
+
 
 
 // Allow usage of this file in C++ programs

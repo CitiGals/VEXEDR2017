@@ -12,6 +12,7 @@
 
 #include "main.h"
 
+
 /*
  * Runs the user operator control code. This function will be started in its own task with the
  * default priority and stack size whenever the robot is enabled via the Field Management System
@@ -35,17 +36,8 @@ void operatorControl() {
 	int joystickR;
 	float motorL;
 	float motorR;
-	int claw;
-	int arm;
-	int power;
-	int turn;
 
 	while (1) {
-			//getJoystickSettings(joystick); //refreshes current joystick values
-			 //power = joystickGetAnalog(1, 2); // vertical axis on right joystick
-			 //turn  = joystickGetAnalog(1, 1); // horizontal axis on right joystick
-
-			 arm = joystickGetAnalog(2, 1); //horizontal axis on left joystick
 
 			 joystickR = joystickGetAnalog (1, 1); //set vertical axis on right joystick
 			 motorR = pow(joystickR, 3)+(0.3*joystickR);
@@ -53,13 +45,17 @@ void operatorControl() {
 			 motorSet (1, motorL); // port, speed
 			 motorSet(3, motorR);
 
+			 clawSet(joystickGetAnalog(1,4)); //uses left horizontal joystick to control claw
 
-			 //motorSet(3, leftMotor); // set left wheels
-			 //motorSet(4, rightMotor); // set right wheels
-			 motorSet(7, claw);
-			 motorSet(8, arm);
-
-
+			 if(joystickGetDigital(1, 6, JOY_UP)) {
+		 	 		liftSet(127); // pressing up, so lift should go up
+	 			}
+	 			else if(joystickGetDigital(1, 6, JOY_DOWN)) {
+		 			liftSet(-127); // pressing down, so lift should go down
+	 			}
+	 			else {
+		 			liftSet(0); // no buttons are pressed, stop the lift
+	 }
 
 
 			 delay(20);
