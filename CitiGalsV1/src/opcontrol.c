@@ -55,8 +55,7 @@ void operatorControl() {
 	 			}
 	 			else {
 		 			liftSet(0); // no buttons are pressed, stop the lift
-	 }
-
+	 			}
 
 			 delay(20);
 	}
