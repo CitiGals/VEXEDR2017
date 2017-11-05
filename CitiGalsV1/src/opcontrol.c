@@ -39,11 +39,10 @@ void operatorControl() {
 
 	while (1) {
 
-			 joystickR = joystickGetAnalog (1, 1); //set vertical axis on right joystick
+			 joystickR = joystickGetAnalog (1, 2); //set vertical axis on right joystick
 			 motorR = pow(joystickR, 3)+(0.3*joystickR);
 			 motorL = pow(joystickR, 3)+(0.3*joystickR);
-			 motorSet (1, motorL); // port, speed
-			 motorSet(3, motorR);
+			 chassisSet(-motorL, -motorR);
 
 			 clawSet(joystickGetAnalog(1,4)); //uses left horizontal joystick to control claw
 
