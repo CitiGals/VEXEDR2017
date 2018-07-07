@@ -1,0 +1,16 @@
+{
+  "transport": "scp",
+  "uploadOnSave": false,
+  "useAtomicWrites": false,
+  "deleteLocal": false,
+  "hostname": "10.10.10.10",
+  "port": "22",
+  "target": "/Documents/GitHub/VEXEDR2017/CitiGalsV1",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "VEXEDR2017",
+  "password": "VEXEDR2017",
+  "watch": []
+}
